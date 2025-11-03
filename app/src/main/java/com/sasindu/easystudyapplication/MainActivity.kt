@@ -11,7 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.sasindu.easystudyapplication.ui.domain.model.Session
+import com.sasindu.easystudyapplication.ui.domain.model.Subject
+import com.sasindu.easystudyapplication.ui.domain.model.Task
 import com.sasindu.easystudyapplication.ui.presentation.dashboard.DashboardScreen
+import com.sasindu.easystudyapplication.ui.presentation.subject.SubjectScreen
 import com.sasindu.easystudyapplication.ui.presentation.theme.EasyStudyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +24,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             EasyStudyApplicationTheme {
-
-                DashboardScreen()
+                SubjectScreen()
+             //   DashboardScreen()
 
             }
         }
@@ -43,3 +47,117 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
+val subjects = listOf(
+    Subject(
+        name = "Physics",
+        goalHours = 2f,
+        colors = Subject.subjectCardColors[0],
+        subjectId = 0
+    ),
+    Subject(
+        name = "Chemistry",
+        goalHours = 5f,
+        colors = Subject.subjectCardColors[1],
+        subjectId = 0
+    ),
+    Subject(
+        name = "Maths",
+        goalHours = 10f,
+        colors = Subject.subjectCardColors[2],
+        subjectId = 0
+    ),
+    Subject(
+        name = "History",
+        goalHours = 12f,
+        colors = Subject.subjectCardColors[3],
+        subjectId = 0
+    ),
+    Subject(
+        name = "English",
+        goalHours = 20f,
+        colors = Subject.subjectCardColors[4],
+        subjectId = 0
+    ),
+)
+
+val sessionList = listOf(
+    Session(
+        sessionId = 0,
+        sessionSubjectId = 0,
+        relatedToSubject = "English",
+        date = 0L,
+        duration = 0,
+
+        ),
+    Session(
+        sessionId = 0,
+        sessionSubjectId = 0,
+        relatedToSubject = "Maths",
+        date = 0L,
+        duration = 0,
+
+        ), Session(
+        sessionId = 0,
+        sessionSubjectId = 0,
+        relatedToSubject = "IT",
+        date = 0L,
+        duration = 0,
+
+        )
+)
+
+val taskList = listOf(
+    Task(
+        title = "Special notes",
+        description = "",
+        dueDate = 0L,
+        priority = 1,
+        relatedToSubject = "",
+        isComplete = false,
+        taskId = null,
+        taskSubjectId = 0
+    ),
+    Task(
+        title = "Maths notes",
+        description = "",
+        dueDate = 4L,
+        priority = 2,
+        relatedToSubject = "",
+        isComplete = true,
+        taskId = null,
+        taskSubjectId = 0
+    ),
+    Task(
+        title = "Chemistry notes",
+        description = "",
+        dueDate = 7L,
+        priority = 3,
+        relatedToSubject = "",
+        isComplete = false,
+        taskId = null,
+        taskSubjectId = 0
+    ),
+    Task(
+        title = "Physics notes",
+        description = "",
+        dueDate = 0L,
+        priority = 4,
+        relatedToSubject = "",
+        isComplete = true,
+        taskId = null,
+        taskSubjectId = 0
+    ),
+    Task(
+        title = "It notes",
+        description = "",
+        dueDate = 2L,
+        priority = 1,
+        relatedToSubject = "",
+        isComplete = false,
+        taskId = null,
+        taskSubjectId = 0
+    ),
+
+
+    )
